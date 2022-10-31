@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.navcontainer {
+  width:100%;
+}
+
+.navcontainer2 {
+  width:100%;
+  float: left;
+  display: flex;
+}
+
+.tab {
+  bottom: 0;
+  display: flex;
+  overflow: hidden;
+  width:fit-content;
+  margin: 0 auto;
+}
+
+
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  width: 100px;
+  transition: 0.3s;
+  font-size: 32px;
+  background-color: rgb(231, 231, 231);
+  width: 200px;
+  border-radius: 30px 30px 0px 0px;
+}
+
+.tabvert {
+  float:left;
+  overflow: hidden;
+  width: 250px;
+  height: fit-content;
+}
+
+.tabvert button {
+  display: block;
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 50px 50px;
+  width: 100%;
+  transition: 0.3s;
+  font-size: 16px;
+  background-color: rgb(231, 231, 231);
+  border-radius: 30px 0px 0px 30px;
+}
+
+.tab button:hover {
+  background-color: #ddd;
+}
+
+.tab button.active {
+  background-color: #ccc;
+}
+
+.tabcontent {
+  display: none;
+  height: fit-content;
+  overflow: hidden;
+}
+
+.tabcontentvert {
+  display:flex;
+  float:right;
+  width: 100%;
+  padding: 50px;
+  border: solid 2px rgb(255, 255, 255);
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: rgb(0, 0, 0);
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 50px;
+  margin:0;
+  height: 200px;
+  background-image: url("https://store-images.s-microsoft.com/image/apps.50670.13727851868390641.c9cc5f66-aff8-406c-af6b-440838730be0.d205e025-5444-4eb1-ae46-571ae6895928?q=90&w=480&h=270");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+  color: white;
+
+}
+
+hr.solid {
+  border-top: 3px solid #bbb;
+  width:100%;
+  padding: 0;
+  margin: 0;
+}
+
+
+</style>
+</head>
+<body>
+
+<h1>Aaron Ramos
+
+<!-- Tab links -->
+
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
+    <button class="tablinks" onclick="openTab(event, 'Blog')">Blog</button>
+    <button class="tablinks" onclick="openTab(event, 'Showcase')">Showcase</button>
+    <button class="tablinks" onclick="openTab(event, 'Contact')">Contact</button>
+  </div>
+  </h1>
+  <hr class="solid">
+  
+  <div class="navcontainer">
+    <div id="Home" class= "tabcontent">
+      <h3>Home</h3>
+      <p>Home is the capital city of England</p>
+      
+    </div>
+
+    <div id = "Blog" class = "tabcontent">
+      <h3>Blog</h3>
+      <p>Blog is the capital city of France</p>
+    </div>
+    
+    <div id = "Showcase" class = "tabcontent">
+      <div class="navcontainer2">
+        <div class="tabvert">
+          <button class="tablinksvert" onclick="openTabVert(event, 'Coding')" id="defaultOpenVert">Coding</button>
+          <button class="tablinksvert" onclick="openTabVert(event, 'Games')">Games</button>
+          <button class="tablinksvert" onclick="openTabVert(event, '3D')">3D Modeling & Animation</button>
+        </div>
+
+      
+        <div id="Coding" class= "tabcontentvert">
+          <iframe width="1080" height="512" src="https://www.youtube.com/embed/4mhg12xZAyU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div id = "Games" class = "tabcontentvert">
+          <h3>Games</h3>
+          <p>Games is the capital city of France</p>
+        </div>
+
+        <div id = "3D" class = "tabcontentvert">
+          <h3>3D</h3>
+          <p>3D is the capital city of France</p>
+        </div>
+      </div>
+    </div>
+
+    <div id = "Contact" class = "tabcontent">
+      <h3>Contact</h3>
+      <p>aaronramos96@gmail.com</p>
+    </div>
+  </div>
+
+<script>
+  function openTab(evt, tabName) {
+    var i, tabcontent, tablinks
+
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+
+  function openTabVert(evt, tabName) {
+    var i, tabcontent, tablinks
+
+    tabcontent = document.getElementsByClassName("tabcontentvert");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    tablinks = document.getElementsByClassName("tablinksvert");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  document.getElementById("defaultOpenVert").click();
+  document.getElementById("defaultOpen").click();
+</script>
+
+</body>
+</html>
+
+
