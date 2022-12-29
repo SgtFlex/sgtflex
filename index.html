@@ -11,32 +11,36 @@
   width:100%;
   float: left;
   display: flex;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
 }
 
 .tab {
-  bottom: 0;
-  display: flex;
-  overflow: hidden;
-  width:fit-content;
+  display: flexbox;
+  width:100%;
   margin: 0 auto;
+  background-color: darkgrey;
+  bottom: 0px;
 }
 
-
+.topbox {
+  display:flexbox;
+  height:200px;
+  background-image: url("banner01.png");
+  background-color: grey;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
 
 .tab button {
-  background-color: inherit;
-  float: left;
   border: none;
-  outline: none;
   cursor: pointer;
   padding: 14px 16px;
-  width: 100px;
   transition: 0.3s;
   font-size: 32px;
   background-color: rgb(231, 231, 231);
   width: 200px;
-  border-radius: 30px 30px 0px 0px;
+  margin:auto;
 }
 
 .tabvert {
@@ -72,7 +76,10 @@
 .tabcontent {
   display: none;
   height: fit-content;
-  overflow: hidden;
+  /* overflow:scroll; */
+  width: 500px;
+  left:50%;
+  position:absolute;
 }
 
 .tabcontentvert {
@@ -94,11 +101,11 @@ h1 {
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
   font-size: 50px;
-  margin:0;
-  height: 200px;
-  background-image: url("https://store-images.s-microsoft.com/image/apps.50670.13727851868390641.c9cc5f66-aff8-406c-af6b-440838730be0.d205e025-5444-4eb1-ae46-571ae6895928?q=90&w=480&h=270");
-  background-repeat: no-repeat;
-  background-size: cover;
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  transform: translate(-50%, 0%);
+  margin: 0 auto;
 }
 
 p {
@@ -108,41 +115,32 @@ p {
 
 }
 
-hr.solid {
-  border-top: 3px solid #bbb;
-  width:100%;
-  padding: 0;
-  margin: 0;
-}
-
-
 </style>
 </head>
 <body>
 
-<h1>Aaron Ramos
 
 <!-- Tab links -->
-
+  <div class="topbox">
+    <h1>Aaron Ramos</h1>
+  </div>
   <div class="tab">
     <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
     <button class="tablinks" onclick="openTab(event, 'Blog')">Blog</button>
     <button class="tablinks" onclick="openTab(event, 'Showcase')">Showcase</button>
     <button class="tablinks" onclick="openTab(event, 'Contact')">Contact</button>
   </div>
-  </h1>
-  <hr class="solid">
   
   <div class="navcontainer">
     <div id="Home" class= "tabcontent">
       <h3>Home</h3>
-      <p>Home is the capital city of England</p>
+      <p>If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence isn't quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator with you in mind. The process is quite simple. Choose the number of random paragraphs you'd like to see and click the button. Your chosen number of paragraphs will instantly appear.</p>
       
     </div>
 
     <div id = "Blog" class = "tabcontent">
       <h3>Blog</h3>
-      <p>Blog is the capital city of France</p>
+      <p>Blog Page</p>
     </div>
     
     <div id = "Showcase" class = "tabcontent">
@@ -160,12 +158,12 @@ hr.solid {
 
         <div id = "Games" class = "tabcontentvert">
           <h3>Games</h3>
-          <p>Games is the capital city of France</p>
+          <p>Games Page</p>
         </div>
 
         <div id = "3D" class = "tabcontentvert">
           <h3>3D</h3>
-          <p>3D is the capital city of France</p>
+          <p>3D Work Page</p>
         </div>
       </div>
     </div>
