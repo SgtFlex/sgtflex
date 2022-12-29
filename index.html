@@ -1,154 +1,176 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-
-html {
-  overflow-y: scroll;
-}
-
-.navcontainer {
-  width:100%;
-  animation: slideInFromLeft ease 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: both;
-    animation-delay: 1s;
-}
-
-.navcontainer2 {
-  width:100%;
-  float: left;
-  display: flex;
-  background-color: rgb(255, 255, 255);
-}
-
-
-
-.topbox {
-  height:200px;
-  width:100%;
-  background-image: url("banner01.png");
-  background-color: grey;
-  background-repeat: no-repeat;
-  background-size:100% 100%;
-  animation: slideInFromLeft ease 2s, marquee 5s linear infinite;
-    animation-iteration-count: 1;
-    animation-fill-mode: both;
-    animation-delay: 0s;  
-}
-
-.tab {
-  display: flexbox;
-  width:100%;
-  margin: 0 auto;
-  background-color: darkgrey;
-  bottom: 0px;
-  text-align: center;
-  animation: slideInFromLeft ease 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: both;
-    animation-delay: 0.5s;
-}
-
-.tab button {
-  border: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 32px;
-  background-color: rgb(231, 231, 231);
-  width: 200px;
-  margin:auto;
-}
-
-.tabvert {
-  float:left;
-  overflow: hidden;
-  width: 250px;
-  height: fit-content;
-}
-
-.tabvert button {
-  display: block;
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 50px 50px;
-  width: 100%;
-  transition: 0.3s;
-  font-size: 16px;
-  background-color: rgb(231, 231, 231);
-  border-radius: 30px 0px 0px 30px;
-}
-
-.tab button:hover {
-  background-color: #ddd;
-}
-
-.tab button.active {
-  background-color: #ccc;
-}
-
-.tabcontent {
-  display: none;
-  height: fit-content;
-  /* overflow:scroll; */
-  width: 1000px;
-  margin-left:auto;
-  margin-right:auto;
-  height:max-content;
-  
-}
-
-.tabcontentvert {
-  display:flex;
-  float:right;
-  width: 100%;
-  padding: 50px;
-  border: solid 2px rgb(255, 255, 255);
-}
-
-body {
-  padding: 0px;
-  margin: 0px;
-  background-color: rgb(0, 0, 0);
-}
-
-p {
-  font-family: verdana;
-  font-size: 20px;
-  color: white;
-
-}
-
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
+  <link rel="icon" type="image/x-icon" href="favicon01.png">
+  <title>Aaron Ramos - Programmer & 3D Artist</title>
+  <style>
+    
+    html {
+      overflow-y: scroll;
     }
-    100% {
+    
+    .navcontainer {
+      width:100%;
+      animation: fadeInAnimation ease 2s;
+      animation-iteration-count: 1;
+      animation-fill-mode: both;
+      animation-delay: 1s;
+      background-image: url("background01.png");
+      height:fit-content;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      z-index:0;
+      padding: 20px;
+    }
+    
+    .navcontainer2 {
+      width:100%;
+      display: flex;
+      overflow:hidden;
+      height:500px;
+    }
+
+    .topbox {
+      height:200px;
+      width:100%;
+      background-image: url("banner01.png");
+      background-color: grey;
+      background-repeat: no-repeat;
+      background-size:100% 100%;
+      animation: slideInFromLeft ease 2s, fadeInAnimation ease 2s;
+      animation-iteration-count: 1;
+      animation-fill-mode: both;
+      animation-delay: 0s;  
+    }
+    
+    .tab {
+      justify-content: center;
+      display: flex;
+      width:100%;
+      margin: 0 auto;
+      background-color: darkgrey;
+      bottom: 0px;
+      text-align: center;
+      animation: slideInFromLeft ease 2s, fadeInAnimation ease 2s;
+      animation-iteration-count: 1;
+      animation-fill-mode: both;
+      animation-delay: 0.5s;
+      box-shadow: 0px 0px 40px 20px black; /*any color you want*/
+      z-index:1;
+      position:relative;
+
+    }
+    
+    .tab button {
+      border: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 32px;
+      background-color: rgb(231, 231, 231);
+      width: 200px;
+      margin:0px 2px;
+      border-radius: 2px;
+    }
+    
+    .tabvert {
+      float:left;
+      width: 250px;
+      background-color: darkgrey;
+    }
+    
+    .tabvert button {
+      display: flex;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 50px 50px;
+      width: 100%;
+      margin:2px 0px;
+      transition: 0.3s;
+      font-size: 24px;
+      background-color: rgb(231, 231, 231);
+      /* border-radius: 30px 0px 0px 30px; */
+    }
+    
+    button:hover {
+      background-color: #ddd;
+    }
+    
+    button.active {
+      background-color: #ccc;
+    }
+    
+    .tabcontent {
+      display: none;
+      height: fit-content;
+      /* overflow:scroll; */
+      width: 1000px;
+      margin-left:auto;
+      margin-right:auto;
+      background-color: black;
+      border: 2px solid darkgrey;
+      min-height: 500px;
+      box-shadow: 0px 0px 40px 20px black; /*any color you want*/
+
+    }
+    
+    .contactform {
+      width:100%;
+    }
+    
+    .tabcontentvert {
+      display:flex;
+      float:right;
+      width: 100%;
+      padding: 50px;
+    }
+    
+    .form-control{
+      display:flexbox;
+      width:500px;
+    }
+    
+    body {
+      padding: 0px;
+      margin: 0px;
+      background-color: rgb(0, 0, 0);
+    }
+    
+    p {
+      font-family: verdana;
+      font-size: 20px;
+      color: white;
+      
+    }
+    
+    @keyframes fadeInAnimation {
+      0% {
+        opacity: 0;
+      }
+      100% {
         opacity: 1;
-     }
-}
-
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-50%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-</style>
+      }
+    }
+    
+    @keyframes slideInFromLeft {
+      0% {
+        transform: translateX(-50%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+    
+  </style>
 </head>
 <body>
-
-
-<!-- Tab links -->
+  
+  
+  <!-- Tab links -->
   <div class="topbox"></div>
   <div class="tab">
     <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
@@ -159,13 +181,12 @@ p {
   
   <div class="navcontainer">
     <div id="Home" class= "tabcontent">
-      <h3>Home</h3>
-      <p>If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence isn't quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator with you in mind. The process is quite simple. Choose the number of random paragraphs you'd like to see and click the button. Your chosen number of paragraphs will instantly appear.</p>
-      
+      <p>
+        If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence isn't quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator with you in mind. The process is quite simple. Choose the number of random paragraphs you'd like to see and click the button. Your chosen number of paragraphs will instantly appear.
+      </p>
     </div>
-
+    
     <div id = "Blog" class = "tabcontent">
-      <h3>Blog</h3>
       <p>Blog Page</p>
     </div>
     
@@ -176,68 +197,89 @@ p {
           <button class="tablinksvert" onclick="openTabVert(event, 'Games')">Games</button>
           <button class="tablinksvert" onclick="openTabVert(event, '3D')">3D Modeling & Animation</button>
         </div>
-
-      
+        
+        
         <div id="Coding" class= "tabcontentvert">
-          <iframe width="1080" height="512" src="https://www.youtube.com/embed/4mhg12xZAyU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <p>Coding page</p>
+          <!-- <iframe width="1080" height="512" src="https://www.youtube.com/embed/4mhg12xZAyU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
         </div>
-
+        
         <div id = "Games" class = "tabcontentvert">
-          <h3>Games</h3>
           <p>Games Page</p>
         </div>
-
+        
         <div id = "3D" class = "tabcontentvert">
-          <h3>3D</h3>
           <p>3D Work Page</p>
         </div>
       </div>
     </div>
-
+    
     <div id = "Contact" class = "tabcontent">
-      <h3>Contact</h3>
-      <p>aaronramos96@gmail.com</p>
+      <p>
+        Hi, I'm Aaron Ramos. Ever since I was young, I was always fascinated with video games as a medium for art. I grew up playing and experiencing tons of different video games. As I went into college, I decided to major in Computer Science as I loved programming so much, and I took up 3D Art and Game Production as an aside in my own personal time. I was, and continue to be passionate about all of the above, and I am always striving to and capable of learning new things, as I know the only restraint is time.
+      </p>
+      <a href="mailto:aaronramos96@gmail.com">aaronramos96@gmail.com</a>
+      <a href="https://www.linkedin.com/in/aaron-ramos-8516a898/">Linked In</a>
+      <div class="contactform">
+        <h1>FormSubmit Demo</h1>
+        <form target="_blank" action="https://formsubmit.co/aaronramos96@gmail.com" method="POST">
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col">
+                <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+              </div>
+              <div class="col">
+                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
+        </form>
+      </div>
     </div>
   </div>
-
-<script>
-  function openTab(evt, tabName) {
-    var i, tabcontent, tablinks
-
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
+  
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks
+      
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
     }
-
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    
+    function openTabVert(evt, tabName) {
+      var i, tabcontent, tablinks
+      
+      tabcontent = document.getElementsByClassName("tabcontentvert");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      
+      tablinks = document.getElementsByClassName("tablinksvert");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
     }
-
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
-  }
-
-  function openTabVert(evt, tabName) {
-    var i, tabcontent, tablinks
-
-    tabcontent = document.getElementsByClassName("tabcontentvert");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-
-    tablinks = document.getElementsByClassName("tablinksvert");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
-  }
-  document.getElementById("defaultOpenVert").click();
-  document.getElementById("defaultOpen").click();
-</script>
-
+    document.getElementById("defaultOpenVert").click();
+    document.getElementById("defaultOpen").click();
+  </script>
+  
 </body>
 </html>
 
