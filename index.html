@@ -3,8 +3,16 @@
 <head>
 <style>
 
+html {
+  overflow-y: scroll;
+}
+
 .navcontainer {
   width:100%;
+  animation: slideInFromLeft ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-delay: 1s;
 }
 
 .navcontainer2 {
@@ -14,22 +22,32 @@
   background-color: rgb(255, 255, 255);
 }
 
+
+
+.topbox {
+  height:200px;
+  width:100%;
+  background-image: url("banner01.png");
+  background-color: grey;
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+  animation: slideInFromLeft ease 2s, marquee 5s linear infinite;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-delay: 0s;  
+}
+
 .tab {
   display: flexbox;
   width:100%;
   margin: 0 auto;
   background-color: darkgrey;
   bottom: 0px;
-}
-
-.topbox {
-  display:flexbox;
-  height:200px;
-  background-image: url("banner01.png");
-  background-color: grey;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+  text-align: center;
+  animation: slideInFromLeft ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-delay: 0.5s;
 }
 
 .tab button {
@@ -77,9 +95,11 @@
   display: none;
   height: fit-content;
   /* overflow:scroll; */
-  width: 500px;
-  left:50%;
-  position:absolute;
+  width: 1000px;
+  margin-left:auto;
+  margin-right:auto;
+  height:max-content;
+  
 }
 
 .tabcontentvert {
@@ -96,23 +116,31 @@ body {
   background-color: rgb(0, 0, 0);
 }
 
-h1 {
-  color: white;
-  text-align: center;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 50px;
-  position: absolute;
-  left: 50%;
-  bottom: 0px;
-  transform: translate(-50%, 0%);
-  margin: 0 auto;
-}
-
 p {
   font-family: verdana;
   font-size: 20px;
   color: white;
 
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 </style>
@@ -121,9 +149,7 @@ p {
 
 
 <!-- Tab links -->
-  <div class="topbox">
-    <h1>Aaron Ramos</h1>
-  </div>
+  <div class="topbox"></div>
   <div class="tab">
     <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
     <button class="tablinks" onclick="openTab(event, 'Blog')">Blog</button>
