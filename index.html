@@ -22,29 +22,45 @@
       background-repeat: no-repeat;
       background-size: 100% 100%;
       z-index:0;
-      padding-top: 20px;
+      padding-top: 0px;
+      align-items: center;
+      display: flex;
     }
     
     .navcontainer2 {
       width:100%;
       display: flex;
-      overflow:hidden;
       height:500px;
+      height:fit-content;
+      z-index:0;
+      position:relative;
     }
 
     .topbox {
       height:200px;
       width:100%;
-      background-image: url("banner01.png");
-      background-color: grey;
-      background-repeat: no-repeat;
-      background-size:100% 100%;
+      overflow:hidden;
       animation: slideInFromLeft ease 2s, fadeInAnimation ease 2s;
       animation-iteration-count: 1;
       animation-fill-mode: both;
       animation-delay: 0s;  
     }
-    
+
+    .banner {
+      width:200%;
+      height:100%;
+      display:flex;
+      background-image: url("banner01.png");
+      background-color: grey;
+      background-repeat: repeat;
+      background-size:50% 100%;
+      animation: slideInFromLeft ease 2s, fadeInAnimation ease 2s;
+      animation-iteration-count: 1;
+      animation-fill-mode: both;
+      animation-delay: 0s;  
+      animation: bannermove 10s linear infinite;
+    }
+
     .tab {
       justify-content: center;
       display: flex;
@@ -76,24 +92,29 @@
     }
     
     .tabvert {
-      float:left;
-      width: 250px;
-      background-color: darkgrey;
+      width: 150px;
+      position: absolute;
+      z-index:2;
+      left:-150px;
+      /* background-color: darkgrey; */
+      height:fit-content;
+      padding-top: 20px;
     }
     
     .tabvert button {
-      display: flex;
-      float: left;
       border: none;
       outline: none;
       cursor: pointer;
-      padding: 50px 50px;
       width: 100%;
+      height:150px;
       margin:2px 0px;
       transition: 0.3s;
       font-size: 24px;
+      text-align: center;
+      padding: 0px;
+      vertical-align: middle;
       background-color: rgb(231, 231, 231);
-      /* border-radius: 30px 0px 0px 30px; */
+      border-radius: 10px 0px 0px 10px;
     }
     
     button:hover {
@@ -103,19 +124,27 @@
     button.active {
       background-color: #ccc;
     }
+
     
     .tabcontent {
-      display: none;
+      display: flex;
+      float: right;
       height: fit-content;
-      /* overflow:scroll; */
-      width: 1000px;
-      margin-left:auto;
-      margin-right:auto;
-      background-color: black;
+      margin-left: auto;
+      margin-right: auto;
+      /* margin-left:auto;
+      margin-right:auto; */
+      background-color: rgba(0, 0, 0, .9);
       border: 2px solid darkgrey;
+      max-width:1000px;
+      width:70%;
       min-height: 500px;
+      position:relative;
       box-shadow: 0px 0px 40px 20px black; /*any color you want*/
+    }
 
+    .tabcontent>p{
+      padding: 20px;
     }
     
     .contactform {
@@ -127,12 +156,7 @@
       float:right;
       width: 100%;
       padding: 50px;
-      overflow:scroll;
-    }
-    
-    .form-control{
-      display:flexbox;
-      width:500px;
+      height:fit-content;
     }
     
     body {
@@ -145,7 +169,7 @@
       font-family: verdana;
       font-size: 20px;
       color: white;
-      padding: 20px;
+      /* padding: 20px; */
     }
     
     @keyframes fadeInAnimation {
@@ -165,6 +189,15 @@
         transform: translateX(0);
       }
     }
+
+    @keyframes bannermove {
+      0% {
+       transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+}
     
   </style>
 </head>
@@ -172,7 +205,10 @@
   
   
   <!-- Tab links -->
-  <div class="topbox"></div>
+  <div class="topbox">
+    <div class="banner">
+    </div>
+  </div>
   <div class="tab">
     <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
     <button class="tablinks" onclick="openTab(event, 'Blog')">Blog</button>
@@ -192,14 +228,12 @@
     </div>
     
     <div id = "Showcase" class = "tabcontent">
+      <div class="tabvert">
+        <button class="tablinksvert" onclick="openTabVert(event, 'Coding')" id="defaultOpenVert">Coding</button>
+        <button class="tablinksvert" onclick="openTabVert(event, 'Games')">Games</button>
+        <button class="tablinksvert" onclick="openTabVert(event, '3D')">3D Art</button>
+      </div>  
       <div class="navcontainer2">
-        <div class="tabvert">
-          <button class="tablinksvert" onclick="openTabVert(event, 'Coding')" id="defaultOpenVert">Coding</button>
-          <button class="tablinksvert" onclick="openTabVert(event, 'Games')">Games</button>
-          <button class="tablinksvert" onclick="openTabVert(event, '3D')">3D Modeling & Animation</button>
-        </div>
-        
-        
         <div id="Coding" class= "tabcontentvert">
           <p>With a group of collaborators, we ported content from a mod called "SPV3" into "Garry's Mod", while also creating original assets for the mod. We created the shaders and programmed the characters to function similar to how they did in SPV3. </p>
           <iframe width=100% height="350" src="https://www.youtube.com/embed/aovDLVq6NcA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -213,7 +247,7 @@
         </div>
         
         <div id = "3D" class = "tabcontentvert">
-          <p>This is a character known as "The Gravemind", which the design is originally from Halo 2. Modeled, textured, and rigged in Blender.</p>
+          <p>This is a character known as "The Gravemind", which is from a character in Halo 2. Modeled, textured, and rigged in Blender.</p>
           <img src="images/gravemind_render_14_2.png" alt="Gravemind" style="width:100%">
           <p>This is a unit called an "Infection Form", whose design comes from a game called Halo: Combat Evolved. Modeled, rigged, textured, and animated in Blender.</p>
           <div style='position:relative; padding-bottom:calc(56.25% + 44px)'><iframe src='https://gfycat.com/ifr/CraftySelfishLarva' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
@@ -224,14 +258,11 @@
     </div>
     
     <div id = "Contact" class = "tabcontent">
-      <p>
-        Hi, I'm Aaron Ramos. Ever since I was young, I was always fascinated with video games as a medium for art. I grew up playing and experiencing tons of different video games. As I went into college, I decided to major in Computer Science as I loved programming so much, and I took up 3D Art and Game Production as an aside in my own personal time. I was, and continue to be passionate about all of the above, and I am always striving to and capable of learning new things, as I know the only restraint is time.
-      </p>
       <a href="mailto:aaronramos96@gmail.com">aaronramos96@gmail.com</a>
       <a href="https://www.linkedin.com/in/aaron-ramos-8516a898/">Linked In</a>
       <div class="contactform">
         <h1>FormSubmit Demo</h1>
-        <form target="_blank" action="https://formsubmit.co/aaronramos96@gmail.com" method="POST">
+        <form target="_blank" action="ced3f77185b89df64cc73d4bece9b091" method="POST">
           <div class="form-group">
             <div class="form-row">
               <div class="col">
@@ -249,6 +280,7 @@
         </form>
       </div>
     </div>
+    
   </div>
   
   <script>
