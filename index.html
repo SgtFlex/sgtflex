@@ -46,11 +46,19 @@
       animation-delay: 0s;  
     }
 
+    .name {
+      position:fixed;
+      left:50%;
+      top:50%;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+    }
+
     .banner {
       width:200%;
       height:100%;
       display:flex;
-      background-image: url("banner01.png");
+      background-image: url("banner02.png");
       background-color: grey;
       background-repeat: repeat;
       background-size:50% 100%;
@@ -225,6 +233,7 @@
   
   <!-- Tab links -->
   <div class="topbox">
+    <div class="name"><img src="name01.png"></div>
     <div class="banner">
     </div>
   </div>
