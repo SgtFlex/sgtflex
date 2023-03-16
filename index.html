@@ -7,6 +7,7 @@
     
     html {
       overflow-y: scroll;
+      color: white;
     }
     
     .navcontainer {
@@ -27,6 +28,12 @@
       align-items: center;
       
     }
+
+    ul {
+      list-style-type: inherit;
+      list-style: inherit;
+      font: inherit;
+    }
     
     .navcontainer2 {
       width:100%;
@@ -36,7 +43,7 @@
       z-index:0;
       position:relative;
     }
-
+    
     .topbox {
       height:200px;
       width:100%;
@@ -46,7 +53,7 @@
       animation-fill-mode: both;
       animation-delay: 0s;  
     }
-
+    
     .name {
       position:fixed;
       left:50%;
@@ -54,7 +61,7 @@
       transform: translate(-50%, -50%);
       z-index: 5;
     }
-
+    
     .banner {
       width:200%;
       height:100%;
@@ -69,7 +76,7 @@
       animation-delay: 0s;  
       animation: bannermove 10s linear infinite;
     }
-
+    
     .tab {
       justify-content: center;
       display: flex;
@@ -87,7 +94,7 @@
       position:relative;
       position: sticky;
       top:0;
-
+      
     }
     
     .tab button {
@@ -136,7 +143,7 @@
     button.active {
       background-color: #ccc;
     }
-
+    
     
     .tabcontent {
       display: flex;
@@ -153,11 +160,9 @@
       min-height: 500px;
       position:relative;
       box-shadow: 0px 0px 40px 20px black; /*any color you want*/
-    }
-
-    .tabcontent>p{
       padding: 20px;
     }
+
     
     .contactform {
       width:100%;
@@ -170,33 +175,33 @@
       padding: 50px;
       height:fit-content;
     }
-
+    
     .videoWrapper {
-  position: relative;
-  padding-bottom: 56.25%;
-  /* 16:9 */
-  padding-top: 25px;
-  height: 0;
-}
-
-.videoWrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+      position: relative;
+      padding-bottom: 56.25%;
+      /* 16:9 */
+      padding-top: 25px;
+      height: 0;
+    }
+    
+    .videoWrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
     
     body {
       padding: 0px;
       margin: 0px;
-      background-color: rgb(0, 0, 0);
+      background-color: rgb(78, 78, 78);
       height:100vh;
       display: flex;
       flex-direction: column;
     }
     
-    p {
+    html {
       font-family: verdana;
       font-size: 20px;
       color: white;
@@ -220,15 +225,15 @@
         transform: translateX(0);
       }
     }
-
+    
     @keyframes bannermove {
       0% {
-       transform: translateX(0);
+        transform: translateX(0);
       }
       100% {
         transform: translateX(-50%);
       }
-}
+    }
     
   </style>
 </head>
@@ -251,46 +256,62 @@
   <div class="navcontainer">
     <div id="Home" class= "tabcontent">
       <p>
-           My name is Aaron Ramos. I program in various languages and do various work related to bringing 3D characters to life in video games (and other mediums)--most importantly: modeling, texturing, and animating. I worked my way through college to get a Bachelors Degree in Computer Science, spent a tremendous amount of time modding and working in game engines to hone my skills as a programmer and as a technical artist, and programmed in several languages for various software projects as part of my own personal ambitions or for college projects.
-
-           Skills:
-           Programming
-            Python
-            C
-            C++
-            Java
-            HTML
-            CSS
-           3D Art
-            Modeling
-            Texturing
-            UV Editing
-            Animating
+        &emsp;My name is Aaron Ramos. I program in various languages and do various work related to bringing 3D characters to life in video games (and other mediums)--most importantly: modeling, texturing, and animating. I worked my way through college to get a Bachelors Degree in Computer Science, spent a tremendous amount of time modding and working in game engines to hone my skills as a programmer and as a technical artist, and programmed in several languages for various software projects as part of my own personal ambitions or for college projects.
+        <br><br>
+        Skills:<br>
         
+        Software + Programming
+        <ul>
+          <li>C++</li>
+          <li>C</li>
+          <li>Python</li>
+          <li>Java</li>
+          <li>Unreal Engine</li>
+          <li>HTML</li>
+          <li>CSS</li>
+        </ul>
+        
+        3D Art
+        <ul>
+          <li>Software such as: Blender, Maya, 3DSMax, Substance Painter</li>
+          <li>Modeling</li>
+          <li>Texturing</li>
+          <li>UV Editing</li>
+          <li>Animating</li>
+        </ul>
+        Other tools, software, and knowledge
+        <ul>
+          <li>3D Model/Character to game engine pipeline</li>
+          <li>Adobe Illustrator/Inkscape</li>
+          <li>Photoshop/GIMP 2</li>
+          <li>Word, Excel, Powerpoint</li>
+        </ul>
       </p>
     </div>
     
-    <!-- <div id = "Blog" class = "tabcontent">
+    <div id = "Blog" class = "tabcontent">
       <p>Blog Page</p>
-    </div> -->
+    </div>
     
     <div id = "Showcase" class = "tabcontent">
       <div class="tabvert">
         <button class="tablinksvert" onclick="openTabVert(event, 'Coding')" id="defaultOpenVert">Coding</button>
-        <button class="tablinksvert" onclick="openTabVert(event, 'Games')">Games</button>
+        <!-- <button class="tablinksvert" onclick="openTabVert(event, 'Games')">Games</button> -->
         <button class="tablinksvert" onclick="openTabVert(event, '3D')">3D Art</button>
       </div>  
       <div class="navcontainer2">
         <div id="Coding" class= "tabcontentvert">
           <p>With a group of collaborators, we ported content from a mod called "SPV3" into "Garry's Mod", while also creating original assets for the mod. We created the shaders and programmed the characters to function similar to how they did in SPV3. </p>
           <div class="videoWrapper">
+            
             <iframe aspect-ratio="16/9" src="https://www.youtube.com/embed/aovDLVq6NcA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
+          
           <div class="videoWrapper">
-
             <iframe src="https://www.youtube.com/embed/4mhg12xZAyU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <p>Over the course of some months, I worked to port over a faction of characters from "Halo" (using existing tools) and programmed them.</p>
+          
           <div class="videoWrapper">
             <iframe src="https://www.youtube.com/embed/SjrYvOTWrUc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
@@ -377,5 +398,3 @@
   
 </body>
 </html>
-
-
