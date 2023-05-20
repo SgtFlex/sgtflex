@@ -6,52 +6,17 @@
   <style>
     
     html {
-      overflow-y: scroll;
       color: white;
     }
-    
-    .navcontainer {
-      display: flex;
-      width:100%;
-      animation: fadeInAnimation ease 2s;
-      animation-iteration-count: 1;
-      animation-fill-mode: both;
-      animation-delay: 1s;
-      background-image: url("background01.png");
-      height:auto;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      z-index:0;
-      padding-top: 0px;
-      align-items: center;
-      
-    }
 
-    ul {
-      list-style-type: inherit;
-      list-style: inherit;
-      font: inherit;
-    }
-    
-    .navcontainer2 {
-      width:100%;
-      display: flex;
-      height:500px;
-      height:fit-content;
-      z-index:0;
-      position:relative;
-    }
-    
-    .topbox {
-      height:200px;
+    .top-container {
+      height:20%;
       width:100%;
       overflow:hidden;
-      animation: slideInFromLeft ease 2s, fadeInAnimation ease 2s;
+      animation: slideInFromLeft ease 1s, fadeInAnimation ease 1s;
       animation-iteration-count: 1;
       animation-fill-mode: both;
-      animation-delay: 0s;  
+      animation-delay: 0.1s;  
     }
     
     .name {
@@ -70,13 +35,13 @@
       background-color: grey;
       background-repeat: repeat;
       background-size:50% 100%;
-      animation: slideInFromLeft ease 2s, fadeInAnimation ease 2s;
+      /* animation: slideInFromLeft ease 1s, fadeInAnimation ease 1s;
       animation-iteration-count: 1;
       animation-fill-mode: both;
-      animation-delay: 0s;  
+      animation-delay: 0.1s;   */
       animation: bannermove 10s linear infinite;
     }
-    
+
     .tab {
       justify-content: center;
       display: flex;
@@ -85,10 +50,10 @@
       background-color: darkgrey;
       bottom: 0px;
       text-align: center;
-      animation: slideInFromLeft ease 2s, fadeInAnimation ease 2s;
+      animation: slideInFromLeft ease 1s, fadeInAnimation ease 1s;
       animation-iteration-count: 1;
       animation-fill-mode: both;
-      animation-delay: 0.5s;
+      animation-delay: 0.2s;
       box-shadow: 0px 0px 40px 20px black; /*any color you want*/
       z-index:1;
       position:relative;
@@ -108,6 +73,48 @@
       margin:0px 2px;
       border-radius: 2px;
     }
+
+    ul {
+      list-style-type: inherit;
+      list-style: inherit;
+      font: inherit;
+    }
+    
+    .main-container {
+      display: flex;
+      width:100%;
+      vertical-align: top;
+      animation: slideInFromLeft ease 1s, fadeInAnimation ease 1s;
+      animation-iteration-count: 1;
+      animation-fill-mode: both;
+      animation-delay: 0.3s;
+      background-image: url("background01.png");
+      height:70%;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      z-index:0;
+      padding-top: 0px;
+      /* align-items: center; */
+      flex: 1 1 auto;
+      overflow-y:auto;
+    }
+
+    
+    
+    .showcase-container {
+      width:100%;
+      display: flex;
+      height:500px;
+      height:fit-content;
+      z-index:0;
+      position:relative;
+    }
+    
+    
+    
+    
     
     .tabvert {
       width: 150px;
@@ -151,6 +158,7 @@
       height: fit-content;
       margin-left: auto;
       margin-right: auto;
+      vertical-align: top;
       /* margin-left:auto;
       margin-right:auto; */
       background-color: rgba(0, 0, 0, .9);
@@ -161,6 +169,9 @@
       position:relative;
       box-shadow: 0px 0px 40px 20px black; /*any color you want*/
       padding: 20px;
+      animation: slideInFromLeft ease 1s, fadeInAnimation ease 1s;
+      animation-iteration-count: 1;
+      animation-fill-mode: both;
     }
 
     
@@ -225,6 +236,15 @@
         transform: translateX(0);
       }
     }
+
+    @keyframes slideOutToRight {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(50%);
+      }
+    }
     
     @keyframes bannermove {
       0% {
@@ -241,7 +261,7 @@
   
   
   <!-- Tab links -->
-  <div class="topbox">
+  <div class="top-container">
     <div class="name"><img src="name01.png"></div>
     <div class="banner">
     </div>
@@ -253,7 +273,7 @@
     <button class="tablinks" onclick="openTab(event, 'Contact')">Contact</button>
   </div>
   
-  <div class="navcontainer">
+  <div class="main-container">
     <div id="Home" class= "tabcontent">
       <p>
         &emsp;My name is Aaron Ramos. I program in various languages and do various work related to bringing 3D characters to life in video games (and other mediums)--most importantly: modeling, texturing, and animating. I worked my way through college to get a Bachelors Degree in Computer Science, spent a tremendous amount of time modding and working in game engines to hone my skills as a programmer and as a technical artist, and programmed in several languages for various software projects as part of my own personal ambitions or for college projects.
@@ -299,7 +319,7 @@
         <!-- <button class="tablinksvert" onclick="openTabVert(event, 'Games')">Games</button> -->
         <button class="tablinksvert" onclick="openTabVert(event, '3D')">3D Art</button>
       </div>  
-      <div class="navcontainer2">
+      <div class="showcase-container">
         <div id="Coding" class= "tabcontentvert">
           <p>With a group of collaborators, we ported content from a mod called "SPV3" into "Garry's Mod", while also creating original assets for the mod. We created the shaders and programmed the characters to function similar to how they did in SPV3. </p>
           <div class="videoWrapper">
@@ -329,9 +349,9 @@
     </div>
     
     <div id = "Contact" class = "tabcontent">
-      <a href="mailto:aaronramos96@gmail.com">aaronramos96@gmail.com</a>
-      <a href="https://www.linkedin.com/in/aaron-ramos-8516a898/">Linked In</a>
-      <div class="contactform">
+      <p><a href="mailto:aaronramos96@gmail.com">aaronramos96@gmail.com</a></p>
+      <p></p><a href="https://www.linkedin.com/in/aaron-ramos-8516a898/">Linked In</a></p>
+      <!-- <div class="contactform">
         <h1>FormSubmit Demo</h1>
         <form target="_blank" action="ced3f77185b89df64cc73d4bece9b091" method="POST">
           <div class="form-group">
@@ -350,7 +370,7 @@
           <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
         </form>
       </div>
-    </div>
+    </div> -->
     
   </div>
   
@@ -360,6 +380,7 @@
       
       tabcontent = document.getElementsByClassName("tabcontent");
       for (i = 0; i < tabcontent.length; i++) {
+        //tabcontent[i].style.animation = "fade-out 2s forwards";
         tabcontent[i].style.display = "none";
       }
       
@@ -368,7 +389,7 @@
         tablinks[i].className = tablinks[i].className.replace(" active", "");
       }
       
-      document.getElementById(tabName).style.display = "block";
+      document.getElementById(tabName).style.display = "inline-block";
       evt.currentTarget.className += " active";
     }
     
