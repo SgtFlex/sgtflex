@@ -3,281 +3,7 @@
 <head>
   <link rel="icon" type="image/x-icon" href="favicon01.png">
   <title>Aaron Ramos - Programmer & 3D Artist</title>
-  <style>
-    
-    html {
-      color: white;
-    }
-
-    .top-container {
-      height:20%;
-      width:100%;
-      overflow:hidden;
-      animation: slideInFromLeft ease 1s, fadeInAnimation ease 1s;
-      animation-iteration-count: 1;
-      animation-fill-mode: both;
-      animation-delay: 0.1s;  
-    }
-    
-    .name {
-      position:fixed;
-      left:50%;
-      top:50%;
-      transform: translate(-50%, -50%);
-      z-index: 5;
-    }
-    
-    .banner {
-      width:4096px;
-      height:256px;
-      display:flex;
-      background-image: url("banner02.png");
-      background-color: grey;
-      background-repeat: repeat;
-      background-size:50% 100%;
-      /* animation: slideInFromLeft ease 1s, fadeInAnimation ease 1s;
-      animation-iteration-count: 1;
-      animation-fill-mode: both;
-      animation-delay: 0.1s;   */
-      animation: bannermove 40s linear infinite;
-    }
-
-    .tab {
-      justify-content: center;
-      display: flex;
-      width:100%;
-      margin: 0 auto;
-      background-color: darkgrey;
-      bottom: 0px;
-      text-align: center;
-      animation: slideInFromLeft ease 1s, fadeInAnimation ease 1s;
-      animation-iteration-count: 1;
-      animation-fill-mode: both;
-      animation-delay: 0.2s;
-      box-shadow: 0px 0px 40px 20px black; /*any color you want*/
-      z-index:1;
-      position:relative;
-      position: sticky;
-      top:0;
-      
-    }
-    
-    .tab button {
-      border: none;
-      cursor: pointer;
-      padding: 14px 16px;
-      transition: 0.3s;
-      font-size: 32px;
-      background-color: rgb(231, 231, 231);
-      width: 250px;
-      margin:0px 2px;
-      border-radius: 2px;
-    }
-
-    ul {
-      list-style-type: inherit;
-      list-style: inherit;
-      font: inherit;
-    }
-    
-    .main-container {
-      display: flex;
-      width:100%;
-      vertical-align: top;
-      animation: slideInFromLeft ease 1s, fadeInAnimation ease 1s;
-      animation-iteration-count: 1;
-      animation-fill-mode: both;
-      animation-delay: 0.3s;
-      background-image: url("background01.png");
-      height:70%;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      z-index:0;
-      padding-top: 0px;
-      /* align-items: center; */
-      flex: 1 1 auto;
-      overflow-y:auto;
-      display:grid;
-    }
-
-    
-    
-    .showcase-container {
-      width:100%;
-      display: flex;
-      height:500px;
-      height:fit-content;
-      z-index:0;
-      position:relative;
-    }
-    
-    
-    
-    
-    
-    .tabvert {
-      width: 150px;
-      position: absolute;
-      z-index:2;
-      left:-150px;
-      /* background-color: darkgrey; */
-      height:fit-content;
-      padding-top: 20px;
-      
-    }
-    
-    .tabvert button {
-      border: none;
-      outline: none;
-      cursor: pointer;
-      width: 100%;
-      height:150px;
-      margin:2px 0px;
-      transition: 0.3s;
-      font-size: 24px;
-      text-align: center;
-      padding: 0px;
-      vertical-align: middle;
-      background-color: rgb(231, 231, 231);
-      border-radius: 10px 0px 0px 10px;
-    }
-    
-    button:hover {
-      background-color: #ddd;
-    }
-    
-    button.active {
-      background-color: #ccc;
-    }
-    
-    
-    .tabcontent {
-      display: none;
-      float: right;
-      height: fit-content;
-      margin-left: auto;
-      margin-right: auto;
-      vertical-align: top;
-      /* margin-left:auto;
-      margin-right:auto; */
-      background-color: rgba(0, 0, 0, .9);
-      border: 2px solid darkgrey;
-      max-width:1000px;
-      width:70%;
-      min-height: 500px;
-      position:relative;
-      box-shadow: 0px 0px 40px 20px black; /*any color you want*/
-      padding: 20px;
-      /* animation: slideInFromLeft ease 1s, fadeInAnimation ease 1s;
-      animation-iteration-count: 1;
-      animation-fill-mode: both; */
-      grid-column: 1;
-      grid-row: 1;
-    }
-
-    .tabcontent:custom {
-      opacity: 0;
-    }
-
-    
-    .contactform {
-      width:100%;
-    }
-    
-    .tabcontentvert {
-      display:flex;
-      float:right;
-      width: 100%;
-      /* padding: 50px; */
-      height:fit-content;
-    }
-    
-    .videoWrapper {
-      position: relative;
-      padding-bottom: 56.25%;
-      /* 16:9 */
-      padding-top: 25px;
-      height: 0;
-    }
-    
-    .videoWrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    video {
-    width:100%;
-    }
-    
-    body {
-      padding: 0px;
-      margin: 0px;
-      background-color: rgb(78, 78, 78);
-      height:100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    html {
-      font-family: verdana;
-      font-size: 20px;
-      color: white;
-      /* padding: 20px; */
-    }
-    
-    @keyframes fadeInAnimation {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-
-    @keyframes fadeOutAnimation {
-      0% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-        display:none;
-      }
-    }
-    
-    @keyframes slideInFromLeft {
-      0% {
-        transform: translateX(-50%);
-      }
-      100% {
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes slideOutToRight {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(50%);
-        display:none;
-      }
-    }
-    
-    @keyframes bannermove {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-    
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   
@@ -345,18 +71,26 @@
       <div class="showcase-container">
         <div id="Coding" class= "tabcontentvert">
           <h1>Sacrilege</h1>
+          <p><a href="https://github.com/SgtFlex/HaloFloodFanGame01/releases">Download Sacrilege</a></p>
           <h2>Premise</h2>
-          <p>"Sacrilege" is a multiplayer FPS/RTS hybrid co-op game set in the "Halo" universe where your goal is to have you and your army survive as long as possible against endless waves of various enemies. By defeating enemies, you gain the abilitiy to call down troops, vehicles, traps, and dynamic objects which will aid you in achieving your ultimate goal and make the battlefield your creation.
+          <p>"Sacrilege" is a multiplayer FPS/RTS hybrid co-op game set in the "Halo" universe. The plan is to support a wide variety of gamemodes. The current present gamemode features your team working together to fight the enemies that spawn in waves. As the game progresses, the waves get harder and more types of enemies show up in order to stop you. What sets this apart from your typical wave-based survival gamemode is the presence of a "Commander" mode that you can switch to at any time. In this "Commander" mode, you can use "Requisition power" (which you get from defeating enemies) to call down weapons, vehicles, objects, and, most importantly, AI that you can issues commands to, such as: commandeering vehicles, wielding weapons, or assisting you in general.
           <h2>My contributions</h2>
-          I created almost the entire game from scratch, including all of the characters (which can be found in the 3D showcase). I created a bunch of components (health, physics, etc), interfaces (damage, interactions, etc), and base classes (characters, vehicles, weapons, grenades, etc) which allowed for easier setup for many different interactions within different systems (such as grenades damage vehicles, grenades blowing up from damage, allowing for players to interact with objects or pick up weapons, etc).
+          I created almost the entire game from scratch using Unreal Engine 4/5, including all of the characters (which can be found in the 3D showcase). I created a lot of different systems such as health systems, physics systems, vehicle systems, character systems, and interactions between the various systems to allow for a sandbox-type feel to the game when these various systems trigger each other (such as grenades triggering other grenades, vehicles causing collision damage to explosive barrels, etc).
           <h2>The AI</h2>
-          The AI of Sacrilege have expansive behiavior trees which allow them to react to the environment around them quickly. They have the ability to evade incoming grenades, commandeer nearby vehicles (which activates a vehicle-specific behavior tree), and most importantly, react to commands given to them by the commander (which includes the player). Every character class has their own AI to make them stand out against other AI.
+          <img src="media/UnrealEditor_vx8tTGGoSg.png" style="width:100%">
+          
+          <video controls autoplay style="height:300px">
+            <source src="media/Replay 2024-12-03 02-42-46.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+
+          </video>
+          The AI of Sacrilege have expansive behiavior trees which allow them to react to the environment around them quickly. They have the ability to evade incoming grenades, commandeer nearby vehicles (which activates a vehicle-specific behavior tree), and most importantly, react to commands given to them by the commander (which includes the player). Every character class has their own AI to make them stand out against other AI. Since "Sacrilege" also includes vehicles, the AI will look to commandeer vehicles which activates a vehicle-specific AI controller and behavior tree.
           <h2>The RTS component</h2>
           Sacrilege is a hybrid FPS/RTS, which means you primarily play in a first-person perspective shooting down foes, but you also have the ability to switch to a commander mode on the fly which allows you to call down troops, place traps, and give commands.
           </p>
         
 
-          <p><a href="https://github.com/SgtFlex/HaloFloodFanGame01/releases">Download Sacrilege</a></p>
+          
           <img src="https://i.imgur.com/YHSxiIQ.jpeg" style="width:100%">     
           <img src="https://i.imgur.com/dKcCycK.jpeg" style="width:100%">    
           <img src="https://i.imgur.com/AIq8tZx.jpeg" style="width:100%">    
@@ -364,8 +98,11 @@
           <h1>Garry's Mod Halo SPV3</h1>
           <p>With a group of collaborators, we ported content from a mod called "SPV3" into "Garry's Mod", while also creating original assets for the mod. We created the shaders and programmed the characters to function similar to how they did in SPV3. </p>
           <div class="videoWrapper">
-            
             <iframe aspect-ratio="16/9" src="https://www.youtube.com/embed/aovDLVq6NcA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p>A short video featuring a physics-driven flying code base I created as part of the mod for the dropship vehicles.
+          <div class="videoWrapper">
+            <iframe aspect-ratio="16/9" src="https://www.youtube.com/embed/i5hPer-GavU?si=Y2P8zlImhz3udLND" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
           <h1>Garry's Mod Halo Sentinels</h1>
           <p>Over the course of some months, I worked to port over a faction of characters from "Halo" (using existing tools) and programmed their behaviors, which include flying, lasering, and death behaviors.</p>
@@ -380,19 +117,28 @@
         </div>
         
         <div id = "3D" class = "tabcontentvert">
+          <p>"Gravemind" character I modeled and rigged.
           <img src="media/gravemind_15_1.png" style="width:100%">     
-          <p>(Still WIP.) Grunt model I created and animated for the "Sacrilege"</p>
-          <video autoplay loop muted controls>
-            <source src="media/Grunt_Reel_010000-0310.mp4" type="video/mp4" />
-          </video> 
+          <p>"Infection form" character I modeled, rigged, animated, and textured for my game, "Sacrilege"</p>
           <video autoplay loop muted controls>
             <source src="media/InfectionForm_32_Idle_010015-0054.mkv" type="video/mp4" />
           </video>
-          <p>(WIP.) Halo Carrier model I created and animated for the "Sacrilege"</p>
+          <div class="videoWrapper">
+          <iframe aspect-ratio="16/9" src="https://www.youtube.com/embed/EjtFmFOG9BE?si=1laVrTZuhMJB_gPd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <p>"Carrier" character I modeled, rigged, animated, and textured for my game, "Sacrilege"</p>
           <video autoplay loop muted controls>
             <source src="media/carrier_reel.mp4" type="video/mp4" />
+          </video>
+          <div class="videoWrapper">
+          <iframe aspect-ratio="16/9" src="https://www.youtube.com/embed/rp7DO8KJ8vM?si=Oenhx2FhYw2iOfuR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <p>(Still WIP.) Grunt model I modeled, rigged, and animated for my game, "Sacrilege" (Texturing unfinished, animations WIP)</p>
+          <video autoplay loop muted controls>
+            <source src="media/Grunt_Reel_010000-0310.mp4" type="video/mp4" />
           </video> 
-          (I did not model this Cylon below, but I did re-rig and animate it)
+         
+          <p>"Cylon" character which I did NOT model, but I did re-rig and animate for a modding project in Garry's Mod</p>
           <video autoplay loop muted controls>
             <source src="media/Cylon_Reel_01.mp4" type="video/mp4" />
           </video>
