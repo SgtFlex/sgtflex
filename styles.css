@@ -148,7 +148,7 @@ button.active {
 
 
 .tabcontent {
-    display: none;
+    display: inline-block;
     float: right;
     height: fit-content;
     margin-left: auto;

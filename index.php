@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon01.png">
+  <title>Aaron Ramos - Programmer & 3D Artist</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  
+  <!-- Tab links -->
+  <div class="top-container">
+    <div class="name"><img src="name01.png"></div>
+    <div class="banner">
+    </div>
+  </div>
+  <div class="tab">
+    <button class="tablinks">Home</button>
+    <button class="tablinks">Showcase</button>
+    <button class="tablinks">Contact</button>
+    <button class="tablinks">Commissions</button>
+    
+
+  </div>
+  <div class="main-container">
+    <div id="Home" class= "tabcontent">
+      
+      <?php include('footer.php'); ?>
+      <p>
+        &emsp;My name is Aaron Ramos. I program in various languages such as C++, Python, Lua, and more. I believe video games is one of the best mediums to experience, and I love programming, so I chose to combine the two. I also love creating characters and learning about the character creation process (Modeling, Sculpting, Texturing, etc) and bringing them to life by programming their behaviors in various engines like Unreal Engine or Source engine. I have created a few Garry's Mod addons and made many personal projects in Unreal Engine. I also love horror, sci-fi, and Halo.
+        <br><br>
+        Skills:<br>
+
+        
+        
+        Software + Programming
+        <ul>
+          <li>C++</li>
+          <li>C</li>
+          <li>Python</li>
+          <li>Java</li>
+          <li>Unreal Engine</li>
+          <li>HTML</li>
+          <li>CSS</li>
+        </ul>
+        
+        3D Art
+        <ul>
+          <li>Software such as: Blender, Maya, 3DSMax, Substance Painter</li>
+          <li>Modeling</li>
+          <li>Texturing</li>
+          <li>UV Editing</li>
+          <li>Animating</li>
+        </ul>
+        Other tools, software, and knowledge
+        <ul>
+          <li>3D Model/Character to game engine pipeline</li>
+          <li>Adobe Illustrator/Inkscape</li>
+          <li>Photoshop/GIMP 2</li>
+          <li>Word, Excel, Powerpoint</li>
+        </ul>
+      </p>
+    </div>  
+</div>
+</body>
+</html>
