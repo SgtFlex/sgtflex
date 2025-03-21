@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="icon" type="image/x-icon" href="media/favicon01.png">
+  <link rel="icon" type="image/x-icon" href="favicon01.png">
   <title>Aaron Ramos - Programmer & 3D Artist</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -10,21 +10,22 @@
   
   <!-- Tab links -->
   <div class="top-container">
-    <div class="name"><img src="media/name01.png"></div>
+    <div class="name"><img src="name01.png"></div>
     <div class="banner">
     </div>
   </div>
-
   <div class="tab">
-    <a href = "index.html"><button class="tablinks">Home</button></a>
-    <a href = "games.html"><button class="tablinks">Games</button></a>
-    <a href = "art.html"><button class="tablinks">Art</button></a>
-    <a href = "contact.html"><button class="tablinks">Contact</button></a>
-    <a href = "commissions.html"><button class="tablinks">Commissions</button></a>
+    <button class="tablinks">Home</button>
+    <button class="tablinks">Showcase</button>
+    <button class="tablinks">Contact</button>
+    <button class="tablinks">Commissions</button>
+    
+
   </div>
-  
   <div class="main-container">
-    <div id="Home" class= "tabcontent">      
+    <div id="Home" class= "tabcontent">
+      
+      <?php include('footer.php'); ?>
       <p>
         &emsp;My name is Aaron Ramos. I program in various languages such as C++, Python, Lua, and more. I believe video games is one of the best mediums to experience, and I love programming, so I chose to combine the two. I also love creating characters and learning about the character creation process (Modeling, Sculpting, Texturing, etc) and bringing them to life by programming their behaviors in various engines like Unreal Engine or Source engine. I have created a few Garry's Mod addons and made many personal projects in Unreal Engine. I also love horror, sci-fi, and Halo.
         <br><br>
