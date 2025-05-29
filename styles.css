@@ -45,18 +45,27 @@ button.active {
 }
 
 .top-container {
-    display: inline-block;
-    height:150px;
+    display: flex;
+    height:200px;
     width:100%;
     justify-content: center;
+    align-items: center;
     margin: auto;
     text-align: center;
+    min-height: 200px;
+    vertical-align: middle;
+    /* background-color: red; */
     
 }
 
 .name {
     /* position:fixed; */
-    margin: auto;
+    
+    height: 10px;
+    width: auto;
+    
+    justify-content: center;
+    margin: 0 auto;
     z-index: 5;
 }
 
