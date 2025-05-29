@@ -45,7 +45,7 @@ button.active {
 }
 
 .top-container {
-    display: flexbox;
+    display: inline-block;
     height:150px;
     width:100%;
     justify-content: center;
@@ -118,7 +118,7 @@ ul {
     width:100%;
     background-image: url("media/background01.png");
     background-color: grey;
-    height:70%;
+    height:fit-content;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
