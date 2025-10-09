@@ -33,12 +33,21 @@ body {
 }
 
 .food-container {
-  height: 500px;
+  width: 100%;
+  height: 300px;
+  background-color: rgba(0,0,0, 0.5);
+  padding: 50px 0px 50px 0px;
+  border-radius: 50px;
+
 }
 
-.food-container {
-  width: 100%;
-  height: 500px;
+.food-container p {
+  display: flex;
+  font-size: 30px;
+  font-size: 2vw;
+  height: 100%;
+  float: left;
+  align-items: center;
 }
 
 .food-container img{
@@ -78,10 +87,11 @@ h1 {
 }
 
 h2 {
+    padding-top: 200px;
     font-family: Ballet, sans-serif;
     font-size: 50px;
     color: turquoise;
-    text-align: left;
+    text-align: center;
 }
 
 p {
